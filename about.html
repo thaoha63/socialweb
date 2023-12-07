@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Mirror</title>
+    <!-- FONT AWESOME icons -->
+    <script src="https://kit.fontawesome.com/f20ffe31b3.js" crossorigin="anonymous"></script>
+    <!-- CSS Reset This file must always come first in the heirarchy -->
+    <link rel="stylesheet" href="reset.css">    
+    <!-- Boostrap and my stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <!-- NAVIGATION BAR -->
+        <div class="container fade-in-image">
+            <nav class="navbar" id="myTopnav">
+                <!-- logo -->
+                <div class="navbar_logo">
+                    <a href="."><img src="image/logo.png" alt="website logo" /></a>
+                </div>
+                <links>
+                    <ul class="navbar__links">
+                        <li class="navbar__link"><a href="index.html">Home</a></li>
+                        <li class="navbar__link"><a href="about.html">About</a></li>
+                        <li class="navbar__link"><a href="casestudy.html">Case Study</a></li>
+                        <li class="navbar__link"><a href="resources.html">Resources</a></li>
+                        <li class="navbar__link"><a href="faq.html">FAQ</a></li>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- fancy BANNER SECTION -->
+    <section id="banner">
+        <div id="aboutbanner"></div>
+    </section>
+    <!-- About Issue -->
+    <section id="about">
+      <div class="container">
+        <!-- heading -->
+        <h2>Core Issues</h2>
+        <!-- item 1 -->
+        <div class="about__item">
+          <!-- img -->
+          <img src="./image/fake.jpeg" alt="AI Bias" />
+          <!-- text -->
+          <div class="about--heading">
+            <h3>Unveiling the Illusions of Social Media</h3>
+            <p>
+              
+              <p> In an era dominated by curated feeds and meticulously crafted online personas, Social Mirror stands as a beacon of truth. We understand the illusionary nature of social media, where the pursuit of digital perfection often overshadows genuine human experiences. Through thoughtful exploration and analysis, we aim to unveil the illusions that shape our online interactions.
+
+            </p>
+          </div>
+        </div>
+        <!-- item 2 -->
+        <div class="about__item">
+          <!-- img -->
+          <img src="./image/authenticity .jpeg" alt="Unequal Treatment" />
+          <!-- text -->
+          <div class="about--heading">
+            <h3>Empowering Authenticity</h3>
+            <p>
+
+              The pressure to conform to idealized standards on social media can be overwhelming. Social Mirror is on a mission to empower users to break free from the shackles of digital expectations. We advocate for the celebration of individuality, encouraging users to embrace their true selves and share the unfiltered realities of life.
+              </p>
+            </p>
+          </div>
+        </div>
+        <!-- item 3 -->
+        <div class="about__item">
+          <!-- img -->
+          <img src="./image/mental.png" alt="Mental Health Picture" />
+          <!-- text -->
+          <div class="about--heading">
+            <h3>Prioritizing Mental Well-being</h3>
+            <p>
+              
+              <p> Constant comparison, cyberbullying, and the pursuit of online validation can significantly impact mental health. Social Mirror prioritizes mental well-being over the relentless pursuit of digital perfection. Our community is built on empathy, support, and open communication, offering resources to help users navigate the digital landscape without compromising their mental health.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <footer class="bg-light text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-primary btn-floating m-1 nhich-transition" style="background-color: #3b5998;" href="https://www.facebook.com/nyutandon/"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+                <!-- Google -->
+                <a class="btn btn-primary btn-floating m-1 nhich-transition" style="background-color: #dd4b39;" href="https://maps.app.goo.gl/WATcUGTFs2qHnvwY8"
+                    role="button"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-primary btn-floating m-1 nhich-transition" style="background-color: #ac2bac;" href="https://www.instagram.com/nyutandon/?hl=en"
+                    role="button"><i class="fab fa-instagram"></i></a>
+            </section>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 footer_blur">
+            &copy; 2023 Social Mirror
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            // this bit of JavaScript just selects responsive className
+            // when you click on the hamburger icon,
+            var x = document.getElementById("myTopnav");
+            if (x.className === "navbar") {
+                x.className += " hamburger";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Mirror</title>
+    <!-- FONT AWESOME icons -->
+    <script src="https://kit.fontawesome.com/f20ffe31b3.js" crossorigin="anonymous"></script>
+    <!-- CSS Reset This file must always come first in the heirarchy -->
+    <link rel="stylesheet" href="reset.css">    
+    <!-- Boostrap and my stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <!-- NAVIGATION BAR -->
+        <div class="container fade-in-image">
+            <nav class="navbar" id="myTopnav">
+                <!-- logo -->
+                <div class="navbar_logo">
+                    <a href="."><img src="image/logo.png" alt="website logo" /></a>
+                </div>
+                <links>
+                    <ul class="navbar__links">
+                        <li class="navbar__link"><a href="index.html">Home</a></li>
+                        <li class="navbar__link"><a href="about.html">About</a></li>
+                        <li class="navbar__link"><a href="casestudy.html">Case Study</a></li>
+                        <li class="navbar__link"><a href="resources.html">Resources</a></li>
+                        <li class="navbar__link"><a href="faq.html">FAQ</a></li>
+                        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- fancy BANNER SECTION -->
+    <section id="banner">
+        <div id="aboutbanner" style="
+  width: 100%;
+  background-image: url(image/banner-resource.png);
+  height: 50vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 8.5%;
+"></div>
+    </section>
+        <style>
+            #controls {
+                font-family: 'Georgia', serif;
+                color: #4d4b4b;
+                margin: 20px;
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+                align-items: center;
+                text-align: center;
+            }
+            #controls h1 {
+                color: #18535C;
+                margin-bottom: 15px;
+            }
+            
+            #resource-container 
+            {
+                display: flex;
+                margin-left:17%;
+            }
+            
+            .resource-item {
+                border: 1px solid #9e8a7d;
+                padding: 20px;
+                margin: 20px;
+                text-align: center;
+                background-color: #fff;
+                border-radius: 10px;
+                overflow: hidden;
+                transition: transform 0.3s ease-in-out;
+                max-width: calc(70%/3); /* regardless of the width, it would adjust */ 
+                width: calc(70%/3);
+                margin-bottom: 10em;
+            }
+            
+            .resource-item:hover {
+                transform: scale(1.05);
+            }
+            .resource-item img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                border-radius: 5px;
+            }
+        </style>
+        <script type="text/javascript" src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+        <title>Resource</title>
+    </head>
+    <body>
+        <div id="controls">
+            <h1>Resources</h1>
+            <!-- Filter buttons -->
+        </div>
+        <!-- Resource container -->
+        <div id="resource-container">
+        <!-- Resources items go here -->
+        </div>
+        <script>
+        // JSON data representing resources
+        const resourceData = [
+            {
+                name: "NAMI",
+                description: "NAMI, the National Alliance on Mental Illness, is the nation's largest grassroots mental health organization dedicated to building better lives for the millions of Americans affected by mental illness.",
+                image: "./image/nami-logo-blue.png",
+            },
+            {
+                name: "SAMHSA",
+                description: "SAMHSA’s National Helpline is a free, confidential treatment referral and information service (in English and Spanish) for everyone who is facing mental and/or substance use disorders.",
+                image: "./image/samhsa.png",
+            },
+            {
+                name: "Health Powered Kidsh",
+                description: "Health Powered Kids is a free online mental and physical health resource designed to empower children and teens to make good choices about being active, eating well and balancing their lives",
+                image: "./image/hpk-logo.png",
+            },
+        ];
+        // Function to create HTML elements for each resources
+        function createresourceItem(item) {
+            const resourceItem = document.createElement("div");
+            const titleElement = document.createElement("h2");
+            const descriptionElement = document.createElement("p");
+            const imageElement = document.createElement("img");
+            
+            resourceItem.classList.add("resource-item", item.category);
+            titleElement.textContent = item.name;
+            descriptionElement.textContent = item.description;  
+            imageElement.src = item.image;
+            imageElement.alt = item.name;
+            
+            resourceItem.appendChild(titleElement);
+            resourceItem.appendChild(imageElement);
+            resourceItem.appendChild(descriptionElement);
+            
+            return resourceItem;
+        }
+            // Populate the resources container
+            const resourceContainer = document.getElementById("resource-container");
+                resourceData.forEach((item, index, itemArray) => {
+                    const resourceItem = createresourceItem(item);
+                    resourceContainer.appendChild(resourceItem);
+                });
+            // Initialize Isotope
+            document.addEventListener("DOMContentLoaded", function () {
+                const iso = new Isotope("#resource-container", {
+                itemSelector: ".resource-item",
+                layoutMode: "fitRows"
+            });
+            // Function to filter items based on data-filter attribute
+            function filterItems(filterValue) {
+                iso.arrange({ filter: filterValue });
+            }
+            // Add event listeners to filter buttons
+            const filterButtons = document.querySelectorAll(".filter-button");
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const filterValue = this.getAttribute("data-filter");
+                    filterItems(filterValue);
+                });
+            });
+        });
+        </script>
+    </body>
+</html>
+
+
+    <footer class="bg-light text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-primary btn-floating m-1 nhich-transition" style="background-color: #3b5998;" href="https://www.facebook.com/nyutandon/"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+                <!-- Google -->
+                <a class="btn btn-primary btn-floating m-1 nhich-transition" style="background-color: #dd4b39;" href="https://maps.app.goo.gl/WATcUGTFs2qHnvwY8"
+                    role="button"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-primary btn-floating m-1 nhich-transition" style="background-color: #ac2bac;" href="https://www.instagram.com/nyutandon/?hl=en"
+                    role="button"><i class="fab fa-instagram"></i></a>
+            </section>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center p-3 footer_blur">
+            &copy; 2023 Social Mirror
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+            // this bit of JavaScript just selects responsive className
+            // when you click on the hamburger icon,
+            var x = document.getElementById("myTopnav");
+            if (x.className === "navbar") {
+                x.className += " hamburger";
+            } else {
+                x.className = "navbar";
+            }
+        }
+    </script>
+</body>
+
+</html>
